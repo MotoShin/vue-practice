@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <input v-model="output">
+                    </td>
+                    <td>
+                        <button v-on:click="exec('C')">C</button>
+                    </td>
+                </tr>
+                <tr v-for="row in items">
+                    <td v-for="numOrSymbol in row">
+                        <button v-on:click="exec(numOrSymbol)">{{numOrSymbol}}</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
